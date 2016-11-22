@@ -39,7 +39,7 @@ var LoginView = Backbone.View.extend( {
     },
 
     /**
-     * checks the user credendials by perfoming a POST request to the wp REST API
+     * checks the user credendtials by performing a request to the wp REST API
      * @param  {string} user
      * @param  {string}password
      * fires the event login:success if request was successful
