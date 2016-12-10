@@ -15,12 +15,12 @@ var app = {};
 app.REST_URL = "https://rest.svenhinse.de";
 app.USERS_URL = app.REST_URL + '/wp-json/wp/v2/users/';
 //add a global event bus
-app.event_bus = _.extend( {}, Backbone.Events );
+app.eventBus = _.extend( {}, Backbone.Events );
 //set debug.enable = true  and enter your credentials to bypass login screen
 app.debug = {};
 app.debug.enable = false;
-app.debug.user = "web_admin";
-app.debug.credentials = "d2ViX2FkbWluOnRlc3Q=";
+app.debug.user = "";
+app.debug.credentials = "";
 
 //global error and success modals
 app.showErrorModal = function( message ) {

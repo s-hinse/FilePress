@@ -11,17 +11,16 @@ import $ from 'jquery';
 
 var LoginView = Backbone.View.extend( {
 
-
     post_template: _.template( $( '#login-template' ).html() ),
     initialize () {
 
         this.render();
     },
     render () {
-            console.log ("login render");
+        console.log( "login render" );
         this.$el.html( this.post_template() );
-        console.log (this.el);
-       $('#app-container').html(this.el);
+        console.log( this.el );
+        $( '#app-container' ).html( this.el );
 
     },
     events       : { 'submit': 'logIn' },

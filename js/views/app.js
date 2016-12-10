@@ -44,8 +44,8 @@ var AppView = Backbone.View.extend( {
         },
         addListeners( obj ) {
             //add listeners for success and error events
-            obj.listenTo( app.event_bus, 'successMessage', app.showSuccessModal );
-            obj.listenTo( app.event_bus, 'errorMessage', app.showErrorModal );
+            obj.listenTo( app.eventBus, 'successMessage', app.showSuccessModal );
+            obj.listenTo( app.eventBus, 'errorMessage', app.showErrorModal );
         },
         render () {
 

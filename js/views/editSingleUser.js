@@ -47,15 +47,15 @@ var EditSingleUserView = Backbone.View.extend( {
         var role = $( '#role' + currentUserId ).val();
 
         console.log( this.model.toJSON() )
-        this.model.set( { first_name: firstName, last_name: lastName, email: eMail, roles: { role } } );
+        this.model.set( { first_name: firstName, last_name: lastName, email: eMail, roles: new Array( role ) } );
         this.model.save( null, {
 
                 success: ( model, resp )=> {
-                    app.event_bus.trigger( 'successMessage', 'User successfully saved to server.' );
+                    app.eventBus.trigger( 'successMessage', 'User successfully saved to server.' );
 
                 },
                 error  : function( model, response ) {
-                    app.event_bus.trigger( 'errorMessage', response.responseText );
+                    app.eventBus.trigger( 'errorMessage', response.responseText );
 
                 }
             }
@@ -76,11 +76,11 @@ var EditSingleUserView = Backbone.View.extend( {
             url: collectionURL,
 
             success: ( model, resp )=> {
-                app.event_bus.trigger( 'successMessage', 'User deleted.' );
+                app.eventBus.trigger( 'successMessage', 'User deleted.' );
 
             },
             error  : function( model, response ) {
-                app.event_bus.trigger( 'errorMessage', response.responseText );
+                app.eventBus.trigger( 'errorMessage', response.responseText );
             }
 
         } );

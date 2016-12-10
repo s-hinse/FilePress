@@ -50,7 +50,7 @@ var SingleFileView = Backbone.View.extend( {
     },
     //triggers the file download
     downloadFile ( event ){
-        var fileURL = this.getItemURL( event ) + '?context=edit';
+        var fileURL = this.getItemURL( event ) + '?context=view';
         Backbone.$.get( fileURL, function( data ) {
             var filename = data.file;
             var salt = data.salt;
@@ -71,16 +71,17 @@ var SingleFileView = Backbone.View.extend( {
         //call "destroy" using our custom URL
         this.model.destroy( {
             url: fileURL,
+            wait: true,
 
             success: ( model, resp )=> {
-                app.event_bus.trigger( 'successMessage', 'File deleted.' );
+                app.eventBus.trigger( 'successMessage', 'File deleted.' );
 
             },
             error  : ( model, response )=> {
-                app.event_bus.trigger( 'errorMessage', response.responseText );
-            }
+                app.eventBus.trigger( 'errorMessage', response.responseText );
+            },
 
-        } );
+        }, );
 
     }
 
