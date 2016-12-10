@@ -23,7 +23,7 @@ var UsersView = Backbone.View.extend( {
     post_template: _.template( $( '#users-template' ).html() ),
 
     initialize () {
-        this.listenTo( this.collection, ' sync remove ', this.render );
+        this.listenTo( this.collection, ' sync destroy ', this.render );
 
         //in order to get all user details we need to pass the query parameter ?context=edit
         this.collection.fetch( {

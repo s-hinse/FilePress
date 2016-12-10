@@ -135,16 +135,14 @@
 
 <script type="text/template" id="edit-user-single-template">
 
-	<td><input class="form-control" id="name<%= id %>" value="<%= username %>"></td>
+	<td></td>
 	<td><input class="form-control" id="first-name<%= id %>" value="<%=first_name %>"></td>
 	<td><input class="form-control" id="last-name<%= id %>" value="<%=last_name %>"></td>
 	<td><input class="form-control" id="email<%= id %>" value="<%=email %>"></td>
 	<td><select class="form-control" id="role<%= id %>">
 		<option value="administrator">Administrator</option>
-		<option value="editor">Editor</option>
-		<option value="author">Author</option>
 		<option value="contributor">Contributor</option>
-		<option value="subscriber">Subscriber</option>
+
 	</select></td>
 
 	<td>
@@ -178,10 +176,7 @@
 			<td><input class="form-control" id="email" type="email" required></td>
 			<td><select class="form-control" id="role">
 				<option value="administrator">Administrator</option>
-				<option value="editor">Editor</option>
-				<option value="author">Author</option>
 				<option value="contributor">Contributor</option>
-				<option value="subscriber">Subscriber</option>
 			</select></td>
 			<td><input class="form-control" id="user-password" type="password" required></td>
 
@@ -199,7 +194,7 @@
 	<h1>File Management</h1>
 
 	<button id="show-upload-file-form" type="button" class="btn btn-default">Upload file</button>
-	<div id ="upload-file-wrapper"></div>
+	<div id="upload-file-wrapper"></div>
 
 	<table class="table table-responsive table-responsive">
 		<thead>
@@ -217,7 +212,8 @@
 <!-- upload file template -->
 <script type="text/template" id="upload-file-template">
 
-	<form id="upload-file" class="form-group alert-warning"><label for="file-input" class="control-label">Select file for upload.</label> <input class="form-control" type="file" id="file-input">
+	<form id="upload-file" class="form-group alert-warning"><label for="file-input" class="control-label">Select file for upload.</label>
+		<input class="form-control" type="file" id="file-input">
 		<button type="submit" class="btn btn-default form-inline">Upload file</button>
 	</form>
 </script>
@@ -230,7 +226,7 @@
 	<td><%= title.raw %></td>
 	<td><%= content.raw %></td>
 	<td><%=date %></td>
-	<td id ="author"></td>
+	<td id="author"></td>
 	<td>
 
 	</td>

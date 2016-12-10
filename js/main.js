@@ -19,8 +19,10 @@ app.eventBus = _.extend( {}, Backbone.Events );
 //set debug.enable = true  and enter your credentials to bypass login screen
 app.debug = {};
 app.debug.enable = false;
-app.debug.user = "";
-app.debug.credentials = "";
+app.debug.user = "web_admin";
+app.debug.password = "test2000";
+//encode user and password
+app.debug.credentials = btoa( app.debug.user + ':' + app.debug.password );
 
 //global error and success modals
 app.showErrorModal = function( message ) {
