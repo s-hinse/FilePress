@@ -51,12 +51,13 @@ var SingleFileView = Backbone.View.extend( {
     //triggers the file download
     downloadFile ( event ){
         var fileURL = this.getItemURL( event ) + '?context=view';
+        //get the file name and the download code from the server
         Backbone.$.get( fileURL, function( data ) {
             var filename = data.file;
             var salt = data.salt;
+            //build the url for the request to the "download" endpoint
             var url = app.REST_URL + '/wp-json/wp/v2/filepress-files/v1/download?file=' + filename + "&salt=" + salt;
-
-            //get collection URL and trigger download
+            // trigger download in a new window
             window.location = url;
         } );
 
@@ -78,6 +79,7 @@ var SingleFileView = Backbone.View.extend( {
 
             },
             error  : ( model, response )=> {
+
                 app.eventBus.trigger( 'errorMessage', response.responseText );
             },
 

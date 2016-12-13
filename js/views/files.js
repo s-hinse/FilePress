@@ -28,7 +28,7 @@ var FilesView = Backbone.View.extend( {
             data: { context: 'view' }, success()
             {
                 col.fetch( {
-                    data : { context: 'edit' },
+                    data : { context: 'view' },
                     reset: true
                 } );
             }

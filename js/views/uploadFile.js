@@ -49,7 +49,7 @@ var UploadFileView = Backbone.View.extend( {
                 success: ( resp )=> {
                     app.eventBus.trigger( 'successMessage', 'File successfully saved to server.' );
                     //update collection with the new cpt entry that was created on the server
-                    this.collection.fetch( { data: { context: 'edit' } } );
+                    this.collection.fetch( { wait: true, data: { context: 'view' },reset:true } );
 
                 },
                 error  : function( response ) {

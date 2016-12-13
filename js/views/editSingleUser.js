@@ -14,6 +14,7 @@ window.$ = $;
 window.jQuery = jQuery;
 import {app} from '../main';
 
+
 var EditSingleUserView = Backbone.View.extend( {
     tagName  : 'tr',
     className: 'warning edit-user  ',
